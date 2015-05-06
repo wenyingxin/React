@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/JSXTransformer.js"></script>
+    <style>
+
+      .bgR{ background-color: #f00;}
+    </style>
+  </head>
+
+  <body>
+    <div id="example"></div>
+
+
+    <script type="text/jsx">
+
+      var HelloMessaga = React.createClass({
+        render:function(){
+          return <h1 className={this.props.className}> hello {this.props.name},value{this.props.value} </h1>;
+        }
+      });
+
+      React.render(
+        <HelloMessaga name="wenyingxin" value="100" className="bgR" />,
+        document.getElementById("example")
+      );
+
+    </script>
+
+
+  </body>
+</html>

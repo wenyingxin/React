@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/JSXTransformer.js"></script>
+    <style media="screen">
+        .fl{ float: left;}
+        .bgR{ background-color: #f00;}
+    </style>
+
+  </head>
+  <body>
+    <script type="text/jsx">
+
+      var NodeList = React.createClass({
+
+        render:function(){
+
+          return(
+
+            <ul className={this.props.className} >
+            {
+              this.props.children.map(function(child){
+                return <li className={child.props.className} >{child}</li>
+              })
+            }
+
+            </ul>
+
+          );
+        }
+      });
+
+      React.render(
+        <NodeList className='fl'>
+            <span className='bgR' >hello</span>
+            <span className='bgR'>world</span>
+        </NodeList>,
+        document.body
+      );
+
+
+
+    </script>
+  </body>
+</html>
